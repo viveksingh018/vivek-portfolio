@@ -382,10 +382,24 @@ function App() {
 
           {/* PROJECT 1 — QuickBlog */}
           <Reveal delay={0.1}>
-            <BentoBox className="md:col-span-2 group relative h-full">
+            
+            <BentoBox className="md:col-span-2 group relative h-full overflow-hidden">
+
+              
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 blur-3xl rounded-full" />
 
+              
+              <div className="absolute inset-0 z-0 pointer-events-none opacity-10 group-hover:opacity-20 group-hover:scale-105 transition-all duration-700 ease-out">
+                <img
+                  src="/quickblog.png" 
+                  alt="QuickBlog Screenshot"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent" />
+              </div>
+             
               <div className="flex flex-col h-full relative z-10">
+
                 <Rocket
                   size={42}
                   className="text-purple-400 mb-4 group-hover:-translate-y-2 group-hover:text-purple-300 transition-all duration-500"
@@ -417,7 +431,7 @@ function App() {
                     className="flex items-center gap-2 px-5 py-2 rounded-full bg-white text-black font-bold text-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300"
                   >
                     <ExternalLink size={16} />
-                    Live Demo
+                    Live Deploy
                   </a>
 
                   <a
@@ -426,7 +440,7 @@ function App() {
                     rel="noreferrer"
                     className="flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-bold hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                   >
-                    <GitBranch size={16} />
+                    <FaGithub size={34} />
                     GitHub
                   </a>
                 </div>
