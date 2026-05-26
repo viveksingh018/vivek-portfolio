@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import {
@@ -294,7 +294,7 @@ function App() {
               rel="noreferrer"
               className="flex justify-center items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-green-500/20 bg-green-500/10 text-green-300 hover:bg-green-500/20 font-bold transition-all duration-300 hover:scale-105"
             >
-              <MessageCircle size={18} />
+              <FaWhatsapp size={18} />
               Let's Talk
             </a>
           </motion.div>
@@ -332,7 +332,7 @@ function App() {
         {/* Gradient Masks for smooth fade on edges */}
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-        
+
         <Reveal>
           <h2 className="text-center text-4xl md:text-5xl font-black mb-16">
             Tech Stack & Skills
@@ -379,13 +379,13 @@ function App() {
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 blur-3xl rounded-full" />
               <div className="absolute inset-0 z-0 pointer-events-none opacity-10 group-hover:opacity-20 group-hover:scale-105 transition-all duration-700 ease-out">
                 <img
-                  src="/quickblog.png" 
+                  src="/quickblog.png"
                   alt="QuickBlog Screenshot"
                   className="w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent" />
               </div>
-             
+
               <div className="flex flex-col h-full relative z-10">
                 <Rocket
                   size={42}
@@ -491,7 +491,7 @@ function App() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black text-lg font-black transition shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.35)]"
             >
-              <MessageCircle size={22} />
+              <FaWhatsapp size={18} />
               Say Hello
             </motion.a>
 
