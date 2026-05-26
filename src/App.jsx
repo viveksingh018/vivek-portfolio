@@ -85,7 +85,7 @@ function App() {
   };
 
   const skills = [
-    "HTML", "CSS", "JavaScript", "Python", "React.js",
+    "HTML", "CSS", "JavaScript", "TypeScrip", "Python", "React.js",
     "Node.js", "MongoDB", "Express.js", "Tailwind CSS",
     "PostgreSQL", "GitHub", "DSA", "Vercel", "Framer Motion",
   ];
@@ -335,7 +335,7 @@ function App() {
         
         <Reveal>
           <h2 className="text-center text-4xl md:text-5xl font-black mb-16">
-            Tech Stack
+            Tech Stack & Skills
           </h2>
         </Reveal>
 
