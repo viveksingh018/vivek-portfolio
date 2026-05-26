@@ -98,9 +98,9 @@ function App() {
 
       {/* ── BACKGROUND GLOW ── */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-indigo-500/20 blur-[140px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-125 h-125 bg-purple-500/10 blur-[120px] rounded-full" />
-        <div className="absolute top-1/2 left-0 w-80 h-80 bg-fuchsia-500/5 blur-[100px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] bg-indigo-500/20 blur-[140px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-purple-500/10 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-0 w-[20rem] h-[20rem] bg-fuchsia-500/5 blur-[100px] rounded-full" />
       </div>
 
       {/* ===============================
@@ -115,15 +115,10 @@ function App() {
             onClick={(e) => { e.preventDefault(); handleNavClick("hero"); }}
             className="flex items-center gap-3 group"
           >
-            {/* Avatar Circle — replace src with your image path */}
             <div className="relative w-10 h-10 rounded-full border-2 border-indigo-500/60 group-hover:border-indigo-400 transition-all duration-300 overflow-hidden bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center shadow-[0_0_14px_rgba(99,102,241,0.4)]">
-              {/* Uncomment below line and add your image path to show real photo */}
-              {/* <img src="/profile.jpg" alt="Vivek" className="w-full h-full object-cover" /> */}
               <span className="text-sm font-black text-white tracking-tight">VS</span>
-              {/* Online dot */}
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-black" />
             </div>
-
             <div className="flex flex-col leading-none">
               <span className="text-base font-black bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text group-hover:from-indigo-300 group-hover:to-fuchsia-400 transition-all duration-300">
                 Vivek Singh
@@ -146,7 +141,6 @@ function App() {
                     : "text-gray-400 hover:text-white"
                   }`}
               >
-                {/* Active / hover background pill */}
                 <span
                   className={`absolute inset-0 rounded-xl transition-all duration-300
                     ${activeSection === id
@@ -154,7 +148,6 @@ function App() {
                       : "bg-transparent group-hover:bg-white/5"
                     }`}
                 />
-                {/* Active dot indicator */}
                 {activeSection === id && (
                   <motion.span
                     layoutId="activeNavDot"
@@ -220,17 +213,13 @@ function App() {
       {/* ===============================
           HERO SECTION
       ================================ */}
-      <section
-        id="hero"
-        className="min-h-screen flex items-center justify-center px-4 pt-24"
-      >
+      <section id="hero" className="min-h-screen flex items-center justify-center px-4 pt-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Status Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -244,7 +233,6 @@ function App() {
             Available for Opportunities
           </motion.div>
 
-          {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -257,7 +245,6 @@ function App() {
             </span>
           </motion.h1>
 
-          {/* Role */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -267,7 +254,6 @@ function App() {
             MERN Stack Developer
           </motion.p>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -279,16 +265,16 @@ function App() {
             MongoDB, and Tailwind CSS.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Optimized spacing for mobile */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-wrap justify-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-16 w-full max-w-lg mx-auto"
           >
             <button
               onClick={() => handleNavClick("projects")}
-              className="px-8 py-4 rounded-full bg-white text-black font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300"
+              className="px-6 py-3 md:px-8 md:py-4 rounded-full bg-white text-black font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300"
             >
               View Projects
             </button>
@@ -296,17 +282,17 @@ function App() {
             <a
               href="/resume.pdf"
               download
-              className="flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 font-bold transition-all duration-300 hover:scale-105 hover:border-white/20"
+              className="flex justify-center items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 font-bold transition-all duration-300 hover:scale-105 hover:border-white/20"
             >
               <Download size={18} />
-              Download Resume
+              Resume
             </a>
 
             <a
               href="https://wa.me/916201168647"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-8 py-4 rounded-full border border-green-500/20 bg-green-500/10 text-green-300 hover:bg-green-500/20 font-bold transition-all duration-300 hover:scale-105"
+              className="flex justify-center items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full border border-green-500/20 bg-green-500/10 text-green-300 hover:bg-green-500/20 font-bold transition-all duration-300 hover:scale-105"
             >
               <MessageCircle size={18} />
               Let's Talk
@@ -342,24 +328,30 @@ function App() {
       {/* ===============================
           SKILLS SECTION
       ================================ */}
-      <section id="skills" className="py-24 border-y border-white/5 bg-white/2">
+      <section id="skills" className="py-24 border-y border-white/5 bg-white/2 relative overflow-hidden">
+        {/* Gradient Masks for smooth fade on edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        
         <Reveal>
           <h2 className="text-center text-4xl md:text-5xl font-black mb-16">
             Tech Stack
           </h2>
         </Reveal>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden flex">
+          {/* Added w-max to prevent compressing and breaking animation */}
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 18 }}
-            className="flex gap-6 whitespace-nowrap"
+            transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+            className="flex gap-4 md:gap-6 whitespace-nowrap w-max px-4"
           >
-            {[...skills, ...skills, ...skills].map((skill, index) => (
+            {/* Duplicated list enough times to cover screen size infinitely */}
+            {[...skills, ...skills, ...skills, ...skills].map((skill, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.08, borderColor: "rgba(99,102,241,0.5)" }}
-                className="px-6 py-4 rounded-2xl border border-white/10 bg-white/3 text-lg font-semibold text-gray-300 cursor-default transition-colors duration-300"
+                whileHover={{ scale: 1.05, borderColor: "rgba(99,102,241,0.5)" }}
+                className="px-5 py-3 md:px-6 md:py-4 rounded-2xl border border-white/10 bg-white/3 text-base md:text-lg font-semibold text-gray-300 cursor-default transition-colors duration-300"
               >
                 {skill}
               </motion.div>
@@ -378,59 +370,55 @@ function App() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+        {/* Removed auto-rows-[300px] which was breaking mobile view */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {/* PROJECT 1 — QuickBlog */}
           <Reveal delay={0.1}>
-            
-            <BentoBox className="md:col-span-2 group relative h-full overflow-hidden">
-
-              
+            <BentoBox className="group relative h-full flex flex-col overflow-hidden">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 blur-3xl rounded-full" />
-
-              
               <div className="absolute inset-0 z-0 pointer-events-none opacity-10 group-hover:opacity-20 group-hover:scale-105 transition-all duration-700 ease-out">
                 <img
                   src="/quickblog.png" 
                   alt="QuickBlog Screenshot"
                   className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent" />
               </div>
              
               <div className="flex flex-col h-full relative z-10">
-
                 <Rocket
                   size={42}
-                  className="text-purple-400 mb-4 group-hover:-translate-y-2 group-hover:text-purple-300 transition-all duration-500"
+                  className="text-purple-400 mb-6 group-hover:-translate-y-2 group-hover:text-purple-300 transition-all duration-500"
                 />
 
                 <h3 className="text-3xl font-black mb-3">QuickBlog Platform</h3>
 
-                <p className="text-gray-400 text-sm leading-relaxed max-w-md mb-6">
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 flex-grow">
                   AI-powered full-stack blogging platform built with MERN stack,
                   authentication, dashboard system, and dynamic content management.
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-8">
                   {["React", "Node.js", "MongoDB", "Express"].map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 rounded-full text-xs border border-white/10 bg-white/5 hover:border-indigo-500/40 hover:bg-indigo-500/10 transition-all duration-300"
+                      className="px-3 py-1.5 rounded-full text-xs font-medium tracking-wide border border-white/10 bg-white/5 hover:border-indigo-500/40 hover:bg-indigo-500/10 transition-all duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-auto flex gap-4 flex-wrap">
+                {/* Buttons fixed for Mobile - They stack on small screens and sit side-by-side on larger */}
+                <div className="mt-auto flex flex-col sm:flex-row gap-4 w-full">
                   <a
                     href="https://quick-blog-omega-liard.vercel.app/"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 px-5 py-2 rounded-full bg-white text-black font-bold text-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300"
+                    className="flex-1 flex justify-center items-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-bold text-sm hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300"
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={18} />
                     Live Deploy
                   </a>
 
@@ -438,10 +426,10 @@ function App() {
                     href="https://github.com/viveksingh018/fullstack-blog-platform"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-bold hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                    className="flex-1 flex justify-center items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-sm font-bold hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                   >
-                    <FaGithub size={34} />
-                    GitHub
+                    <FaGithub size={20} />
+                    GitHub Repo
                   </a>
                 </div>
               </div>
@@ -450,34 +438,28 @@ function App() {
 
           {/* PROJECT 2 — E-Commerce Coming Soon */}
           <Reveal delay={0.2}>
-            <BentoBox className="md:col-span-2 group relative h-full overflow-hidden">
-              {/* Coming Soon overlay */}
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] z-20 flex items-center justify-center rounded-3xl">
-                <div className="text-center">
-                  <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-yellow-500/40 bg-yellow-500/10 text-yellow-300 font-bold text-sm mb-3">
-                    <Clock size={16} className="animate-pulse" />
-                    Coming Soon
-                  </div>
-                  <p className="text-gray-400 text-xs">Currently in development</p>
+            <BentoBox className="group relative h-full flex flex-col overflow-hidden">
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-20 flex flex-col items-center justify-center rounded-3xl">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-yellow-500/40 bg-yellow-500/10 text-yellow-300 font-bold text-sm mb-3">
+                  <Clock size={16} className="animate-pulse" />
+                  Coming Soon
                 </div>
+                <p className="text-gray-300 font-medium text-sm">Currently in development</p>
               </div>
 
-              {/* Blurred content behind */}
-              <div className="flex flex-col md:flex-row gap-6 h-full items-start md:items-center opacity-40">
-                <ShoppingCart size={52} className="text-blue-400" />
-                <div className="flex-1">
-                  <h3 className="text-3xl font-black mb-3 text-blue-400">
-                    E-Commerce Platform
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-6 max-w-md">
-                    Full-featured shopping platform with authentication, cart
-                    system, product management, and payment integration.
-                  </p>
-                  <div className="flex gap-4 flex-wrap">
-                    <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm">React</span>
-                    <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm">Node.js</span>
-                    <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm">MongoDB</span>
-                  </div>
+              <div className="flex flex-col h-full opacity-30">
+                <ShoppingCart size={42} className="text-blue-400 mb-6" />
+                <h3 className="text-3xl font-black mb-3 text-blue-400">
+                  E-Commerce Platform
+                </h3>
+                <p className="text-gray-400 text-sm md:text-base mb-8 flex-grow">
+                  Full-featured shopping platform with authentication, cart
+                  system, product management, and payment integration.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-medium">React</span>
+                  <span className="px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-medium">Node.js</span>
+                  <span className="px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-medium">MongoDB</span>
                 </div>
               </div>
             </BentoBox>
@@ -489,14 +471,14 @@ function App() {
       {/* ===============================
           CONTACT
       ================================ */}
-      <section id="contact" className="py-32 px-4">
+      <section id="contact" className="py-32 px-4 border-t border-white/5 bg-gradient-to-b from-transparent to-indigo-950/20">
         <Reveal>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-7xl font-black mb-6">
+            <h2 className="text-4xl md:text-6xl font-black mb-6">
               Let's build something impactful.
             </h2>
 
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
+            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-12">
               Have an idea, opportunity, or project? Feel free to connect with me.
               I'm always open to collaborating and learning new things.
             </p>
@@ -507,43 +489,43 @@ function App() {
               rel="noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-black text-lg font-black transition shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.35)]"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black text-lg font-black transition shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.35)]"
             >
-              <MessageCircle size={24} />
+              <MessageCircle size={22} />
               Say Hello
             </motion.a>
 
             {/* SOCIALS */}
-            <div className="mt-20 flex justify-center gap-8 text-gray-400">
+            <div className="mt-16 flex justify-center gap-8 text-gray-400">
               <motion.a
                 href="https://github.com/viveksingh018"
                 target="_blank"
                 rel="noreferrer"
-                whileHover={{ scale: 1.25, color: "#ffffff" }}
+                whileHover={{ scale: 1.2, color: "#ffffff" }}
                 whileTap={{ scale: 0.95 }}
                 className="transition-colors duration-300"
               >
-                <FaGithub size={34} />
+                <FaGithub size={30} />
               </motion.a>
 
               <motion.a
                 href="https://www.linkedin.com/in/viveksingh-mca/"
                 target="_blank"
                 rel="noreferrer"
-                whileHover={{ scale: 1.25, color: "#0077b5" }}
+                whileHover={{ scale: 1.2, color: "#0077b5" }}
                 whileTap={{ scale: 0.95 }}
                 className="transition-colors duration-300"
               >
-                <FaLinkedin size={34} />
+                <FaLinkedin size={30} />
               </motion.a>
 
               <motion.a
                 href="mailto:viveksingh.codes@gmail.com"
-                whileHover={{ scale: 1.25, color: "#f87171" }}
+                whileHover={{ scale: 1.2, color: "#f87171" }}
                 whileTap={{ scale: 0.95 }}
                 className="transition-colors duration-300"
               >
-                <MdEmail size={34} />
+                <MdEmail size={30} />
               </motion.a>
             </div>
           </div>
@@ -553,8 +535,8 @@ function App() {
       {/* ===============================
           FOOTER
       ================================ */}
-      <footer className="border-t border-white/5 py-8 text-center text-gray-500 text-sm">
-        © 2026 Vivek Singh • Built with React, Tailwind CSS & Framer Motion
+      <footer className="py-8 text-center text-gray-500 text-sm bg-black">
+        © {new Date().getFullYear()} Vivek Singh • Built with React, Tailwind CSS & Framer Motion
       </footer>
 
       {/* ── SCROLL TO TOP BUTTON ── */}
@@ -567,7 +549,7 @@ function App() {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-indigo-600 hover:bg-indigo-500 border border-indigo-400/30 shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-colors duration-300"
+            className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-indigo-600 hover:bg-indigo-500 border border-indigo-400/30 shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-colors duration-300"
           >
             <ChevronUp size={22} />
           </motion.button>
